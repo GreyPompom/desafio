@@ -19,7 +19,6 @@ import com.example.rinha.response.TransacaoExtratoResponse;
 
 @RestController
 @RequestMapping("/clientes")
-@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.OPTIONS})
 public class ExtratoController {
 
     private final ClienteRepository clienteRepository;
@@ -32,7 +31,6 @@ public class ExtratoController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.OPTIONS})
     @GetMapping("/{id}/extrato")
     public ResponseEntity<?> getExtrato(@PathVariable Long id) {
         Cliente cliente = clienteRepository.findById(id).orElse(null);

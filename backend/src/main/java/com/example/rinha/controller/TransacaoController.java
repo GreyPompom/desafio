@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/clientes")
-@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.OPTIONS})
 public class TransacaoController {
 
     @Autowired
@@ -25,7 +24,6 @@ public class TransacaoController {
     @Autowired
     private TransacaoRepository transacaoRepository;
 
-    @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.OPTIONS})
     @Transactional
     @PostMapping("/{id}/transacoes")
     public ResponseEntity<TransacaoResponse> criarTransacao(@PathVariable Long id, @RequestBody Transacao transacao) {
